@@ -1,0 +1,57 @@
+﻿@if (TempData["ToastSuccess"] != null)
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>toastr.success('@TempData["ToastSuccess"]', 'Success')</script>
+}
+@if (TempData["ToastError"] != null)
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>toastr.error('@TempData["ToastError"]', 'Error')</script>
+}
+@if (TempData["ToastWarning"] != null)
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>toastr.warning('@TempData["ToastWarning"]', 'Warning)</script>
+}
+@if (TempData["ToastInfo"] != null)
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>toastr.info('@TempData["Info"]', 'Info')</script>
+}
+@*___________________SWEET ALERT SECTION______________________*@
+@if (TempData["SweetSuccess"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal("Success", "@TempData["SweetSuccess"]", "success")
+    </script>
+}
+@if (TempData["SweetError"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal("Oops", "@TempData["SweetError"]", "error")
+    </script>
+}
+@if (TempData["SweetWarning"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal("Warning", "@TempData["SweetWarning"]", "warning")
+    </script>
+}
+@if (TempData["SweetInfo"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal("Info", "@TempData["SweetInfo"]", "info")
+    </script>
+}

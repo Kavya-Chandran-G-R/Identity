@@ -1,0 +1,36 @@
+﻿@model LoginDTO
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form method="post" class="border p-3 mt-4" asp-controller="Account" asp-action="Login" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]">
+    <fieldset>
+        <legend>Login</legend>
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="form-label mt-4"></label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="form-label mt-4"></label>
+            <input asp-for="Password" class="form-control">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group pt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-controller="Account" asp-action="Register" class="btn btn-secondary">Back To Register</a>
+        </div>
+
+    </fieldset>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
